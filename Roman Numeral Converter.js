@@ -1,20 +1,21 @@
-function convertToRoman(num) {
-    const roman = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
-    const arabic = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-    let n = roman.length;
-    let arr = [];
-    let i = 0;
-    
-    while(i<n || num>0){
-      if(num >= arabic[i]){
-        arr.push(roman[i])
-        num = num - arabic[i];
-      } else{
-        i+=1;
+function convertToRoman (num) {
+    const romanNum = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+    const arabicNum = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    const n = romanNum.length
+    const result = []
+    let i = 0
+  
+    while (i < n || num > 0) {
+      if (num >= arabicNum[i]) {
+        result.push(romanNum[i])
+        num -= arabicNum[i]
+      } else {
+        i++
       }
     }
   
-    return arr.join("");
+    return result.join('')
   }
   
-  console.log(convertToRoman(36));
+  console.log(convertToRoman(36))
+  
